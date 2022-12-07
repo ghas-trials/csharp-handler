@@ -6,7 +6,7 @@ public class PermissionHandler2 : IHttpHandler
 {
 	public void ProcessRequest(HttpContext ctx)
 	{
-		String userName = ctx.Request.QueryString["user"];
+		String userName = ctx.Request.QueryString["user"].Replace("../", "");
 		String salutation = "Dear User";
 
 		String permissionsFile = "/home/permissions/" + userName + ".txt";
